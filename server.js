@@ -78,7 +78,7 @@ app.get('/api/', (req, res) => {
                         if (results.length === 0) {
                             return res.status(404).json({
                                 total_count: 0,
-                                query_results: [{ Error: `No results found for ${keyword}`}]
+                                query_results: [{ Error: `No results found for '${keyword}'`}]
                             });
                         }
 
