@@ -55,7 +55,7 @@ app.get('/api/', (req, res) => {
     try {
         const keyword = req.query.query || '';
         const limit = 10;
-        const offset = parseInt(((req.query.page - 1) * limit), 10) || 0;
+        const offset = (req.query.page - 1) * limit;
 
         connection.query(
             'SELECT COUNT(*) AS total_count FROM new_schema.patents WHERE LOWER(patent_text) LIKE LOWER(?)',
