@@ -54,7 +54,7 @@ app.get('/api/plot', (req, res) => {
 app.get('/api/', (req, res) => {
     try {
         const keyword = req.query.query || '';
-        const limit = 20;
+        const limit = 10;
         const offset = parseInt(((req.query.page - 1) * limit), 10) || 0;
 
         connection.query(
